@@ -1,0 +1,9 @@
+tasks:
+  task1:
+    # (task definitions are not required by Robotmk, but expected by RCC to be compatible with other Robocorp features)
+    shell: echo "nothing to do"
+
+environmentConfigs:
+  - conda.yaml
+
+artifactsDir: output  
