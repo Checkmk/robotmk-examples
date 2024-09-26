@@ -1,0 +1,1 @@
+MYVAR = "var value from vars.py!"

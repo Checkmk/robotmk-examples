@@ -1,0 +1,1 @@
+--variablefile $ROBOTMK_BASEDIR/minimal/vars.py

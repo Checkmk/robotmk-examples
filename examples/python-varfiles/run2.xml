@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-07-25T12:26:05.588366" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="/home/simonmeggle/Documents/01_dev/robotmk-examples/robotmk-examples-checkmk/templates/minimal/test.robot">
+<test id="s1-t1" name="My Test" line="16">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-07-25T12:26:05.613540" level="INFO">Hello Checkmk!</msg>
+<arg>${MYVAR}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-07-25T12:26:05.613370" elapsed="0.000207"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-25T12:26:08.614109" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-25T12:26:05.613659" elapsed="3.000697"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-07-25T12:26:08.615069" level="INFO">Done.</msg>
+<arg>Done.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-07-25T12:26:08.614747" elapsed="0.000421"/>
+</kw>
+<status status="PASS" start="2024-07-25T12:26:05.613005" elapsed="3.002469"/>
+</test>
+<doc>This is a minimal Robot Framework suite.
+You can execute it with
+`robot test.robot`
+or
+`robot --variable MYVAR:Hello test.robot`
+Either use an existing python environment or use RCC (https://github.com/robocorp/rcc)
+to create one:
+`rcc task shell`</doc>
+<status status="PASS" start="2024-07-25T12:26:05.588936" elapsed="3.027453"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
