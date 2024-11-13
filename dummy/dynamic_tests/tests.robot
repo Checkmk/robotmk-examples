@@ -6,10 +6,10 @@ Library  ./DynamicTestListener.py
 
 *** Variables ***
 
-${NUMBER_OF_TESTS}  3
+${NUMBER_OF_TESTS}  20
 
 *** Test Cases ***
 
-# One Test is required in a vaölid suite file; "Dummy" gets deleted by the listener
+# One Test is required in a valid suite file; "Dummy" gets deleted by the listener
 Dummy
    No Operation

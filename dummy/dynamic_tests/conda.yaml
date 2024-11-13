@@ -11,3 +11,4 @@ dependencies:
   - pip:
     # packlages listed here are fetched from pypi.org and installed using pip.
     - robotframework==7.1.0
+    - faker
