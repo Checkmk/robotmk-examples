@@ -46,3 +46,4 @@ temp/
 testrun/*
 .~lock*
 *.pkl
+experiments
