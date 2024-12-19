@@ -4,7 +4,7 @@ Documentation       This suite show how to use different viewports to simulate
 ...  https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json
 Library             Browser  enable_presenter_mode=True
 
-Suite Setup         New Browser    headless=${HEADLESS}  
+Suite Setup         New Browser    headless=${HEADLESS} 
 Suite Teardown      Close Browser
 Test Setup          New Context
 Test Teardown       Close Context
