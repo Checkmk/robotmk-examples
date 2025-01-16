@@ -3,7 +3,7 @@
 Documentation       This is a minimal test suite to demonstrate a web test case using 
 ...    Browser library (https://robotframework-browser.org), based on Playwright. 
 
-Library  Browser
+Library  Browser   timeout=3
 
 *** Variables ***
 ${SEARCH_ENGINE}  https://www.google.com?hl=en
@@ -18,6 +18,9 @@ Perform a Google Search
     Click  text="Accept all"
     Fill Text  selector=textarea[title=Search]  txt=${SEARCH_TERM}
     Keyboard Key  press  Enter
+    ${old_timeout}=  Set Browser Timeout  3
+    # doing stuff
+    Set Browser Timeout  ${old_timeout}
     Sleep  3
     Get Text  div\#search  *=  ${SEARCH_TERM}
     Take Screenshot  EMBED  selector=div\#search
