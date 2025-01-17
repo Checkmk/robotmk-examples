@@ -1,0 +1,13 @@
+channels:
+  # Where to download the installation sources (do not change unless you know what you're doing) 
+  - conda-forge
+
+dependencies:
+  # software to install from conda-forge
+  - python=3.10.12  
+  - pip=23.2.1     
+  # Python packages to install from pypi.org.
+  # (equivalent to requirements.txt)
+  # For reproducable environments, make sure that packages are always specified with an exact version number. 
+  - pip:
+     - robotframework==7.2
