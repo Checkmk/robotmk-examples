@@ -10,4 +10,4 @@ dependencies:
   # (equivalent to requirements.txt)
   # For reproducable environments, make sure that packages are always specified with an exact version number. 
   - pip:
-     - robotframework==7.0
+     - robotframework==7.1.1

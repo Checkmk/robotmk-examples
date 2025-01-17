@@ -7,7 +7,7 @@ dependencies:
   - pip=23.2.1  
   - pip:
     # packlages listed here are fetched from pypi.org and installed using pip.
-    - robotframework==7
+    - robotframework==7.1.1
     - psutil
     - mergedeep
 
