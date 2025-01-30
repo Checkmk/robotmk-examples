@@ -1,0 +1,82 @@
+output-dir = { expr = "f'results/run-{datetime.now().strftime(\"%d-%m-%Y-%H.%M.%S\")}'" }
+
+# Selects the Default profile if no profile is given at command line.
+default-profiles = [
+    "devel",
+    "disabled_profile",
+    "disabled_profile_with_env_var",
+]
+
+# Similar to --listener, Class to programmatically modify the suite structure before execution.
+[pre-run-modifiers]
+DuplicateTests = []
+
+# environment vars
+[env]
+ENV_VAR = "1"
+
+# RF vars
+[variables]
+CMD_VAR = { expr = "1+2*5" }
+CMD_VAR_LONG = "a test"
+ANOTHER_VAR = { expr = "environ.get('CMD_VAR_LONG', 'default')" }
+
+# Profiles =====================
+[profiles.devel]
+description = """The devel profile
+this is a second line
+this is a third line
+this is a fourth line
+this is a fifth line
+
+and this is a sixth line"""
+
+[profiles.devel.extend-variables]
+BROWSER = "chromium"
+API_URL = "http://localhost:8080"
+APP_URL = "http://localhost:3000"
+
+# =====================
+[profiles.firefox]
+description = "The firefox profile"
+
+[profiles.firefox.extend-variables]
+BROWSER = "firefox"
+
+# =====================
+
+[profiles.headless.extend-variables]
+HEADLESS = "true"
+
+# =====================
+
+[profiles.ci-browser]
+enabled = { if = 'environ.get("CI") == "true"' }
+extend-variables = { BROWSER = "chromium" }
+
+# =====================
+
+[profiles.prod.extend-variables]
+API_URL = "https://api.prod.company.com"
+APP_URL = "https://app.prod.company.com"
+
+# =====================
+
+[profiles.disabled_profile]
+enabled = false
+
+# =====================
+
+[profiles.disabled_profile_with_env_var]
+enabled = { if = "environ.get('DISABLED_PROFILE') in ['true', '1']" }
+
+# =====================
+
+[profiles.test1.extend-variables]
+API_URL = "https://api.test1.company.com"
+APP_URL = "https://app.test1.company.com"
+
+# =====================
+
+[tool.robotcode-analyze.modifiers]
+warning = ["KeywordNotFound"]

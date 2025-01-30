@@ -1,18 +1,20 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+*.pyc
 *.py[cod]
 *$py.class
 
 # Caches and logs
 .cache/
+*.log
 log.html
 output.xml
 report.html
-*.log
+playwright-log.txt
 
 # Virtual environment
-venv/
 .env/
+venv/
 
 # User-specific files
 *.user
@@ -27,22 +29,23 @@ venv/
 .Trashes
 ehthumbs.db
 Thumbs.db
-playwright-log.txt
-.vs
-output/
-results/
-venv/
-temp/
-.rpa/
+
+# IDE / Editor specific files
 .idea/
+.vscode
+.vs
+
+# Jupyter Notebook related files
 .ipynb_checkpoints/
 */.ipynb_checkpoints/*
 .virtual_documents/
 */.virtual_documents/*
-.vscode
-.DS_Store
-*.pyc
-*/work-items-out/*
-testrun/*
+
+# Robot Framework / Test execution outputs
+output/
+results/
+temp/
+
+# Temporary and lock files
 .~lock*
 *.pkl

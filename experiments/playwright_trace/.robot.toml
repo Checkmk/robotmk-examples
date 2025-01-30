@@ -1,0 +1,51 @@
+output-dir = { expr = "f'results/run-{datetime.now().strftime(\"%d-%m-%Y-%H.%M.%S\")}'" }
+
+# Selects the Default profile if no profile is given at command line.
+default-profiles = ["synmon", "end2end"]
+
+[env]
+ENVIRONMENT = "PROD"
+
+
+[variables]
+CMD_VAR = { expr = "1+2*5" }
+CMD_VAR_LONG = "a test"
+ANOTHER_VAR = { expr = "environ.get('CMD_VAR_LONG', 'default')" }
+SEARCH_ENGINE = "https://www.google.com?hl=en"
+MODE = "Full"
+
+# Profiles =====================
+# SYNMON
+[profiles.synmon]
+hidden = true
+description = """This is the Profile which 
+executes the google search test with 
+Synthetic Monitoring as search term"""
+
+[profiles.synmon.extend-variables]
+SEARCH_QUERY = "'Checkmk' 'Synthetic Monitoring'"
+
+
+[profiles.synmon-chromium.extend-variables]
+BROWSER = "chromium"
+
+[profiles.synmon-ff.extend-variables]
+BROWSER = "firefox"
+
+
+# END2END
+[profiles.end2end]
+hidden = true
+description = """This is the Profile which 
+executes the google search test with 
+END2END as search term"""
+
+[profiles.end2end.extend-variables]
+SEARCH_QUERY = "'Checkmk' 'End2End Monitoring'"
+
+
+[profiles.end2end-chromium.extend-variables]
+BROWSER = "chromium"
+
+[profiles.end2end-ff.extend-variables]
+BROWSER = "firefox"
