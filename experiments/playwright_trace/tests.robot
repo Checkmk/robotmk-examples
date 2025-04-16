@@ -6,17 +6,12 @@ Documentation       This is a minimal test suite to demonstrate a web test case 
 # Instead of saving the screenshots to the file system, the screenshots are embedded in the log file.
 Library             Browser    
 ...    run_on_failure=Take Screenshot \ EMBED \ fileType=jpeg \ quality=50
-...    tracing_group_mode=${MODE}
-# ...    tracing_group_mode=Browser
-# ...    tracing_group_mode=Playwright
+...    tracing_group_mode=${BROWSER_TRACE_MODE}
 
 *** Variables ***
 ${BROWSER}        chromium
 ${SEARCH_ENGINE}  https://www.google.com?hl=en
 ${SEARCH_QUERY}   "Checkmk" "Synthetic Monitoring"
-${MODE}  Full
-#${MODE}  Browser
-#${MODE}  Playwright
 
 &{HAR_CFG}   path=${OUTPUTDIR}/har.file    omitContent=True
 &{VIDEO_CFG}   dir=${OUTPUTDIR}/videos  
@@ -42,8 +37,8 @@ Log Test
 Browser Init
     New Browser  browser=${BROWSER}  headless=False
     New Context  locale=en-US  
-    ...    tracing=trace_${MODE}.zip
-    #...    recordHar=&{HAR_CFG}
+    ...    tracing=trace_${BROWSER_TRACE_MODE}.zip
+    ...    recordHar=&{HAR_CFG}
     ...    recordVideo=&{VIDEO_CFG}
     New Page  ${SEARCH_ENGINE} 
 

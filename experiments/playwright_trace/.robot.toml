@@ -1,4 +1,4 @@
-output-dir = { expr = "f'results/run-{datetime.now().strftime(\"%d-%m-%Y-%H.%M.%S\")}'" }
+output-dir = { expr = "f'results/run-{datetime.now().strftime(\"%Y%m%d-%H.%M.%S\")}'" }
 
 # Selects the Default profile if no profile is given at command line.
 default-profiles = ["synmon", "end2end"]
@@ -12,7 +12,8 @@ CMD_VAR = { expr = "1+2*5" }
 CMD_VAR_LONG = "a test"
 ANOTHER_VAR = { expr = "environ.get('CMD_VAR_LONG', 'default')" }
 SEARCH_ENGINE = "https://www.google.com?hl=en"
-MODE = "Full"
+#BROWSER_TRACE_MODE = "Full"
+BROWSER_TRACE_MODE = "Browser"
 
 # Profiles =====================
 # SYNMON
