@@ -1,3 +1,0 @@
-robotframework==7.1.1
-robotframework-browser==18.2.0
-robotframework-crypto==0.3.0

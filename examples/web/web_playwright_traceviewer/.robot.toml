@@ -1,0 +1,36 @@
+# Selects the Default profile if no profile is given at command line.
+default-profiles = ["trace-playwright", "trace-playwright", "trace-full"]
+
+# variables for all profiles
+[variables]
+SEARCH_ENGINE = "https://www.google.com?hl=en"
+#MODE = "Full"
+#MODE = "Playwright"
+MODE = "Browser"
+
+# Profiles =====================
+
+[profiles.trace-playwright]
+output-dir = { expr = "f'results/trace-pw/run-{datetime.now().strftime(\"%d-%m-%Y-%H.%M.%S\")}'" }
+
+[profiles.trace-playwright.extend-variables]
+MODE = "Playwright"
+SEARCH_QUERY = "'Checkmk' 'Synthetic Monitoring'"
+
+# --- 
+
+[profiles.trace-browser]
+output-dir = { expr = "f'results/trace-browser/run-{datetime.now().strftime(\"%d-%m-%Y-%H.%M.%S\")}'" }
+
+[profiles.trace-browser.extend-variables]
+MODE = "Browser"
+SEARCH_QUERY = "'Checkmk' 'Synthetic Monitoring'"
+
+# --- 
+
+[profiles.trace-full]
+output-dir = { expr = "f'results/trace-full/run-{datetime.now().strftime(\"%d-%m-%Y-%H.%M.%S\")}'" }
+
+[profiles.trace-full.extend-variables]
+MODE = "Full"
+SEARCH_QUERY = "'Checkmk' 'Synthetic Monitoring'"

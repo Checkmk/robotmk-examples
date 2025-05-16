@@ -1,0 +1,18 @@
+# For more details on the format and content:
+# https://github.com/robocorp/rcc/blob/master/docs/recipes.md#what-is-in-condayaml
+
+channels:
+  - conda-forge
+
+dependencies:
+  # packages listed here are fetched and installed from conda-forge. 
+  - python=3.12.3          
+  - pip=23.2.1  
+  - nodejs=22.11.0
+  - pip:
+    # packages listed here are fetched from pypi.org and installed using pip.
+    - robotframework==7.1.1
+    - robotframework-browser==19.1
+
+rccPostInstall:
+  - rfbrowser init   # Initialization command for Playwright (npm)
