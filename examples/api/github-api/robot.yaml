@@ -1,0 +1,8 @@
+tasks:
+  noexec:
+    shell: echo "not for execution as RCC task"
+
+environmentConfigs:
+  - conda.yaml
+
+artifactsDir: output
