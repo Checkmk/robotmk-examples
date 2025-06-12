@@ -11,19 +11,19 @@ ${URL}       https://supermarket-complaints.demo.robotmk.org/
 
 
 *** Test Cases ***
-Submit A Complaint
+Complaint Can Be Submitted
     [Documentation]  Submit a new complaint to the supermarket and store the request ID.
     [Setup]   Session Init  ${URL}
     Fill Form
     Get Submission ID
 
-Verify Complaint Reception
+Submitted Complaint Can Be Found In The Mailbox
     [Documentation]  Verify that the request ID is searchable in the mailbox.
     [Setup]   Session Init  ${URL}/mailbox
     Login  agent   supersecure
     Search Complaint  ${REQUEST_ID}
 
-Deny Mailbox Access With Wrong Credentials
+Mailbox Access Denied With Wrong Credentials
     [Documentation]  Verify that mailbox access is denied with wrong credentials.
     [Setup]   Session Init  ${URL}/mailbox
     Login  agent   wrongpassword
