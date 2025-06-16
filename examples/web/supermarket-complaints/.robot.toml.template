@@ -1,0 +1,5 @@
+
+output-dir = { expr = "f'results/run-{datetime.now().strftime(\"%d-%m-%Y-%H.%M.%S\")}'" }
+
+[variables]
+TOKEN = "xxxxxxxxxx"

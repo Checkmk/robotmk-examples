@@ -8,6 +8,7 @@ Test Setup          Session Init
 ${BROWSER}  chromium
 ${HEADLESS}     False
 ${URL}       https://supermarket-complaints.demo.robotmk.org/
+${TEST_TOKEN}  ${EMPTY}
 
 
 *** Test Cases ***
