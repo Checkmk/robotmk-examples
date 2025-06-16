@@ -1,5 +1,7 @@
 # 🛒 RMK Supermarket Complaints RF Test
 
+![submission form](img/submission_form_small.png)
+
 This project contains tests for the demo application at [https://supermarket-complaints.demo.robotmk.org](https://supermarket-complaints.demo.robotmk.org).  
 The application simulates a real-life scenario with two user interfaces:
 
