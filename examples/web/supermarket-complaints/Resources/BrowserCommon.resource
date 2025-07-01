@@ -6,6 +6,9 @@ Library  Browser
 ...    tracing_group_mode=Browser
 ...    auto_delete_passed_tracing=true
 
+*** Variables ***
+${BROWSER}  chromium
+${HEADLESS}     False
 
 *** Keywords ***
 Browser Init

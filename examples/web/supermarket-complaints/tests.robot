@@ -5,10 +5,10 @@ Suite Setup         Browser Init  ${BROWSER}
 Test Setup          Session Init
 
 *** Variables ***
-${BROWSER}  chromium
-${HEADLESS}     False
+
 ${URL}       https://supermarket-complaints.demo.robotmk.org/
 ${TEST_TOKEN}  ${EMPTY}
+${REQUEST_ID}  ${EMPTY}
 
 
 *** Test Cases ***
@@ -18,11 +18,6 @@ Complaint Can Be Submitted
     Fill Form
     Get Submission ID
 
-Submitted Complaint Can Be Found In The Mailbox
-    [Documentation]  Verify that the request ID is searchable in the mailbox.
-    [Setup]   Session Init  ${URL}/mailbox
-    Login  agent   supersecure
-    Search Complaint  ${REQUEST_ID}
 
 Mailbox Access Denied With Wrong Credentials
     [Documentation]  Verify that mailbox access is denied with wrong credentials.
@@ -30,18 +25,26 @@ Mailbox Access Denied With Wrong Credentials
     Login  agent   wrongpassword
     Expect Error Message
 
+Submitted Complaint Can Be Found In The Mailbox
+    [Documentation]  Verify that the request ID is searchable in the mailbox.
+    [Setup]   Session Init  ${URL}/mailbox
+    Login  agent   ${TEST_TOKEN}
+    Search Complaint  ${REQUEST_ID}
+
 *** Keywords ***
 
 Fill Form
     Fill Text  id=subject  Temperature
     Fill Text  id=message  It's too cold in your store!
     Fill Text  id=city  Munich
+    Fill Text  id=token  ${TEST_TOKEN}
     Click  id=submit-btn
 
 Get Submission ID
     ${id}=  Get Text  id=request-id
     VAR  ${REQUEST_ID}  ${id}  scope=SUITE
     Log  Request ID: ${REQUEST_ID}
+    Sleep  2s
 
 Login
     [Arguments]  ${username}  ${password}
