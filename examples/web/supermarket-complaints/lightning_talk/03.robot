@@ -1,6 +1,6 @@
 *** Settings ***
 Library  Browser
-Suite Setup   New Browser  headless=${HEADLESS}
+Suite Setup   New Browser  headless=${HEADLESS}  
 
 *** Variables ***
 ${HEADLESS}     False
@@ -15,7 +15,7 @@ Create Complaint
     Save Complaint ID
 
 Search Complaint
-    [Setup]  New Page  ${URL}/mailbox 
+    [Setup]  New Page  ${URL}/mailbox
     Login   agent   ${TEST_TOKEN}
     Search Complaint  ${REQUEST_ID}
     
@@ -36,16 +36,15 @@ Save Complaint ID
     Sleep  2
 
 Login
-    [Arguments]    ${username}    ${password}
-    Fill Text  id=username  ${username}
-    Fill Text  id=password  ${password}
-    Click  id=login-btn
+    [Arguments]    ${arg1}    ${arg2}
+    # TODO: implement keyword "Login".
+    Fail    Not Implemented
 
 
 Search Complaint
     [Arguments]    ${arg1}
-    Fill Text  id=filter  ${arg1}
-    Click  id=search
-    Get Text  id=results  contains  ${request_id}  msg=Request {expected} not found!
+    # TODO: implement keyword "Search Complaint".
+    Fail    Not Implemented
+
 
 
