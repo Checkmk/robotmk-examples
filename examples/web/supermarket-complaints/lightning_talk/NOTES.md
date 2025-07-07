@@ -1,24 +1,29 @@
-## 00
-- Web Test => Import Browser
-- Suite Beginn: 
+## 00.robot
+
+this is a Web Test => Import Browser library 
+Create Browser instance with visible UI
 ```
 Library  Browser
 Suite Setup   New Browser  headless=${HEADLESS}
 ```
+## 01.robot
 
-## 01
+Create the Test Cases: 
 
-Test Cases: 
-- `Create Complaint` + No Operation
-- `Search Complaint` + No Operation
-test Setup:
-- `[Setup]  New Page  ${URL}`
-- Für Url Var section: `${URL}       https://supermarket-complaints.demo.robotmk.org/`
-- Test case 1+2 (2: /mailbox)
+- `Create Complaint`  
+- `Search Complaint` 
+- add "No Operation" kwd to both test cases
 
-## 02
-Woraus bestehen die Test Cases? 
-01: 
+Define test Setup: create a new page for each test
+- Test 1: `[Setup]  New Page  ${URL}`
+- Test 2: `[Setup]  New Page  ${URL}/mailbox`
+- Define the Variable in Var section: `${URL}       https://supermarket-complaints.demo.robotmk.org/`
+
+## 02.robot
+
+Define the basic steps on the highest keyword level (only test logic, no implementation!)
+
+Create Complaint : 
     Submit Form
     Save Complaint ID
 02: 
