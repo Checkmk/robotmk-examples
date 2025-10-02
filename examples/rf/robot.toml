@@ -1,0 +1,1 @@
+output-dir = { expr = "f'results/run-{datetime.now().strftime(\"%Y%m%d-%H.%M.%S\")}'" }

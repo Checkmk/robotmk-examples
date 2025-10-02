@@ -47,5 +47,6 @@ Search Complaint
     Fill Text  id=filter  ${arg1}
     Click  id=search
     Get Text  id=results  contains  ${request_id}  msg=Request {expected} not found!
+    Sleep  4
 
 
