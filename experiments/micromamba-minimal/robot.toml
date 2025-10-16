@@ -1,0 +1,30 @@
+# This file is used to configure Robot Framework command line options and settings
+# when executed in VS Code using the "RobotCode" extenstion:
+# https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode
+# For auto-completion in this file, install the "Even Better TOML" extension:
+# https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml
+
+# For a list of all possible options, see:
+# https://robotcode.io/03_reference/config
+
+# create a unique output directory for each run
+output-dir = { expr = "f'results/run-{datetime.now().strftime(\"%d-%m-%Y-%H.%M.%S\")}'" }
+
+# Environment variables
+#[env]
+#ENV_VAR = "1"
+
+# Robot Framework variables (--variables)
+# [variables]
+# MY_RF_VAR = "foo"
+
+# Execution profiles allow you to define different configurations to run a Robot Framework suite. 
+# They can be selected in the VS Code "Testing" sidebar or by using the "RobotCode: Select Configuration Profiles" command.
+# [profiles.Profile1]
+# [profiles.Profile1.extend-variables]
+# ENVIRONMENT = "PROD"
+
+# [profiles.Profile2]
+# inherits = "Profile1"
+# [profiles.Profile2.extend-variables]
+# DEBUG = "true"

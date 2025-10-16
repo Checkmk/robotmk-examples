@@ -1,0 +1,5 @@
+# This file extends/overwrites the settings in robot.toml and is meant to be used ONLY locally. 
+# Do NOT commit this file to version control!
+
+# [profiles.Profile1.extend-variables]
+# PASSWORD = "secret"
