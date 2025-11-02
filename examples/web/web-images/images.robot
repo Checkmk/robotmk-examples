@@ -5,24 +5,25 @@ Documentation       This suite shows how to check a web page for an expected ima
 ...  display each image in turn and checks if the expected motorcycle image is present.
 
 # presenter mode is enabled to make it easier to follow along when the tests are run with UI.
-Library             Browser   enable_presenter_mode=True
+Library             Browser   enable_presenter_mode={'duration': 0.4s}
 # DocTest.VisualTest library is used to perform image comparisons.
 Library             DocTest.VisualTest   
 Suite Setup         Suite Initialization
 
 *** Variables ***
 ${URL}      https://sampleapp.tricentis.com
+${SEARCH_IMAGE}    motorcycle
 
 *** Test Cases ***
 
 Hero Section Shows A Motorcycle Image
     [Documentation]    Verify that the hero section contains an image of a motorcycle.
-    Search Image In Hero Section    img/motorcycle.png
+    Search Image In Hero Section    ${SEARCH_IMAGE}
 
 *** Keywords ***
 Suite Initialization
     # Launch the browser with UI and open the page    
-    New Browser    chromium    headless=${False}  slowMo=0.2s
+    New Browser    chromium    headless=${False} 
     # Setting a specific viewport size and locale is always recommended to ensure consistent test results
     New Context    viewport={ 'width': 1280, 'height': 1024 }  locale=us-US
     # Opening the page
@@ -30,7 +31,7 @@ Suite Initialization
 
 
 Search Image In Hero Section
-    [Arguments]    ${image_path}
+    [Arguments]    ${image}
     # CSS selector: Get the selectors for all image buttons (<li> elements) below the hero slider 
     ${img_buttons}=  Get Elements  div.hero-slider ol li    
     # Iterate through all image buttons ("dots") to find the expected image
@@ -42,13 +43,13 @@ Search Image In Hero Section
         # Take a screenshot of the current page, store path in variable
         ${page_screenshot}=  Take Screenshot  fileType=png
         # Check if the expected image is present in the screenshot
-        ${found}=  Screenshot Contains Template Image   ${page_screenshot}   ${image_path}
+        ${found}=  Screenshot Contains Template Image   ${page_screenshot}   img/${image}.png
         IF   ${found}   
-            Set Test Message   Motorcycle Image Found in Hero Section! 
+            Set Test Message   Image '${image}' found in Hero Section! 
             RETURN
         END
     END
-    Fail   The expected motorcycle image was not found in the Hero section!
+    Fail   The expected image '${image}' was not found in the Hero section!
 
 
 Screenshot Contains Template Image

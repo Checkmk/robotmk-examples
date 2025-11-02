@@ -1,0 +1,16 @@
+
+[profiles.Car]
+[profiles.Car.variables]
+SEARCH_IMAGE = "car"
+
+[profiles.Truck]
+[profiles.Truck.variables]
+SEARCH_IMAGE = "truck"
+
+[profiles.Motorcycle]
+[profiles.Motorcycle.variables]
+SEARCH_IMAGE = "motorcycle"
+
+[profiles.Camper]
+[profiles.Camper.variables]
+SEARCH_IMAGE = "camper"
