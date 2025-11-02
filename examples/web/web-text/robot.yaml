@@ -1,0 +1,18 @@
+tasks:
+  Checkmk:
+    command:
+      - python
+      - -m
+      - robot
+      - --report
+      - NONE
+      - -d
+      - output
+      - --logtitle
+      - Task log
+      - tasks.robot
+
+condaConfigFile: conda.yaml
+artifactsDir: output
+ignoreFiles:
+  - .gitignore
