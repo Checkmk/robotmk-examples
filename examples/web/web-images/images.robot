@@ -7,7 +7,7 @@ Documentation       This suite shows how to check a web page for an expected ima
 # presenter mode is enabled to make it easier to follow along when the tests are run with UI.
 Library             Browser   enable_presenter_mode={'duration': 0.4s}
 # DocTest.VisualTest library is used to perform image comparisons.
-Library             DocTest.VisualTest   
+Library             DocTest.VisualTest   embed_screenshots=True
 Suite Setup         Suite Initialization
 
 *** Variables ***
@@ -60,5 +60,5 @@ Screenshot Contains Template Image
     # If the image is found, the status will be True, otherwise False.
     ${status}=  Run Keyword And Return Status
     ...  Image Should Contain Template  
-    ...  image=${screenshot}  template=${template}  take_screenshots=True  threshold=0.2
+    ...  image=${screenshot}  template=${template}  take_screenshots=True  threshold=0.2  log_template=True
     RETURN   ${status}
