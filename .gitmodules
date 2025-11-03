@@ -1,0 +1,3 @@
+[submodule "examples/api/api-demo"]
+	path = examples/api/api-demo
+	url = git@github.com:Robotmk/robot-framework-api-automation-demo.git
