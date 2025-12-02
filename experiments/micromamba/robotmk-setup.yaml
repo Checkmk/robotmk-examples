@@ -1,5 +1,0 @@
-post_build_commands:
-  - name: rfbrowser_init
-    command:
-      - rfbrowser
-      - init
