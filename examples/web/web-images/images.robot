@@ -13,6 +13,7 @@ Suite Setup         Suite Initialization
 *** Variables ***
 ${URL}      https://sampleapp.tricentis.com
 ${SEARCH_IMAGE}    motorcycle
+${HEADLESS}    True
 
 *** Test Cases ***
 
@@ -23,7 +24,7 @@ Hero Section Shows A Motorcycle Image
 *** Keywords ***
 Suite Initialization
     # Launch the browser with UI and open the page    
-    New Browser    chromium    headless=${False} 
+    New Browser    chromium    headless=${HEADLESS} 
     # Setting a specific viewport size and locale is always recommended to ensure consistent test results
     New Context    viewport={ 'width': 1280, 'height': 1024 }  locale=us-US
     # Opening the page
@@ -43,7 +44,7 @@ Search Image In Hero Section
         # Take a screenshot of the current page, store path in variable
         ${page_screenshot}=  Take Screenshot  fileType=png
         # Check if the expected image is present in the screenshot
-        ${found}=  Screenshot Contains Template Image   ${page_screenshot}   img/${image}.png
+        ${found}=  Screenshot Contains Template Image   ${page_screenshot}   ${CURDIR}/img/${image}.png
         IF   ${found}   
             Set Test Message   Image '${image}' found in Hero Section! 
             RETURN
