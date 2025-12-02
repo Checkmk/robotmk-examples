@@ -1,0 +1,10 @@
+channels:
+- conda-forge
+dependencies:
+- python=3.12
+- pip=23.2.1
+- nodejs=22.11.0
+- pip:
+  - robotframework==7.1.1
+  - robotframework-browser==19.3.0
+  - robotframework-doctestlibrary
