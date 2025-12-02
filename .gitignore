@@ -46,3 +46,6 @@ temp/
 testrun/*
 .~lock*
 *.pkl
+
+experiments/doctest-ai/.robot.toml
+experiments/selfheal-ai/.robot.toml
