@@ -1,0 +1,99 @@
+{
+    "_default": {
+        "1": {
+            "locator": "text=Sign in",
+            "class": "nav-link",
+            "tagName": "A",
+            "parentElement.tagName": "LI",
+            "innerText": "Sign in",
+            "testsuite": "Selfheal-Ai.Tests"
+        },
+        "2": {
+            "locator": "nav",
+            "class": "navbar navbar-expand-lg navbar-light bg-light",
+            "tagName": "NAV",
+            "childElementCount": 1,
+            "parentElement.tagName": "APP-HEADER",
+            "previousSibling.tagName": "DIV",
+            "innerText": "Home\nCategories \nContact\nSign in\n EN ",
+            "testsuite": "Selfheal-Ai.Tests"
+        },
+        "3": {
+            "locator": "text=Sign in",
+            "class": "nav-link",
+            "tagName": "A",
+            "parentElement.tagName": "LI",
+            "innerText": "Sign in",
+            "testsuite": "Selfheal-Ai.Tests"
+        },
+        "4": {
+            "locator": "text=Sign in",
+            "class": "nav-link",
+            "tagName": "A",
+            "parentElement.tagName": "LI",
+            "innerText": "Sign in",
+            "testsuite": "Selfheal-Ai.Tests"
+        },
+        "5": {
+            "locator": "id=email",
+            "id": "email",
+            "class": "form-control ng-untouched ng-pristine ng-invalid",
+            "type": "email",
+            "placeholder": "Your email",
+            "tagName": "INPUT",
+            "parentElement.tagName": "DIV",
+            "previousSibling.tagName": "LABEL",
+            "parentElement.innerText": "Email address *",
+            "previousSibling.innerText": "Email address *",
+            "testsuite": "Selfheal-Ai.Tests"
+        },
+        "6": {
+            "locator": "id=password",
+            "id": "password",
+            "class": "form-control",
+            "type": "password",
+            "placeholder": "Your password",
+            "tagName": "INPUT",
+            "parentElement.tagName": "DIV",
+            "nextSibling.tagName": "DIV",
+            "testsuite": "Selfheal-Ai.Tests"
+        },
+        "7": {
+            "locator": "data-test=login-submit",
+            "class": "btnSubmit",
+            "value": "Login",
+            "type": "submit",
+            "tagName": "INPUT",
+            "parentElement.tagName": "DIV",
+            "testsuite": "Selfheal-Ai.Tests"
+        },
+        "8": {
+            "locator": "nav",
+            "class": "navbar navbar-expand-lg navbar-light bg-light",
+            "tagName": "NAV",
+            "childElementCount": 1,
+            "parentElement.tagName": "APP-HEADER",
+            "previousSibling.tagName": "DIV",
+            "innerText": "Home\nCategories \nContact\nSign in\n EN ",
+            "testsuite": "Selfheal-Ai.Tests"
+        },
+        "9": {
+            "locator": "text=Sign in",
+            "class": "nav-link",
+            "tagName": "A",
+            "parentElement.tagName": "LI",
+            "innerText": "Sign in",
+            "testsuite": "Selfheal-Ai.Tests"
+        },
+        "10": {
+            "locator": "nav",
+            "class": "navbar navbar-expand-lg navbar-light bg-light",
+            "tagName": "NAV",
+            "childElementCount": 1,
+            "parentElement.tagName": "APP-HEADER",
+            "previousSibling.tagName": "DIV",
+            "innerText": "Home\nCategories \nContact\nSign in\n EN ",
+            "testsuite": "Selfheal-Ai.Tests"
+        }
+    }
+}
