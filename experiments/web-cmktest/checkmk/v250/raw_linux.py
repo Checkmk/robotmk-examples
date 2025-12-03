@@ -1,11 +1,10 @@
-#   _ _                  
-#  | (_)                 
+#   _ _
+#  | (_)
 #  | |_ _ __  _   ___  __
 #  | | | '_ \| | | \ \/ /
-#  | | | | | | |_| |>  < 
+#  | | | | | | |_| |>  <
 #  |_|_|_| |_|\__,_/_/\_\
-                       
-                       
+
 
 agent_config.setdefault("linux_robotmk", [])
 
@@ -38,7 +37,7 @@ agent_config["linux_robotmk"] = [
                                             {
                                                 "source": (
                                                     "archive",
-                                                    "/usr/lib/check_mk_agent/robot/web-cmktest/web-cmktest.tgz",
+                                                    "/usr/lib/check_mk_agent/robot/web-cmktest/web-cmktest.tar.gz",
                                                 ),
                                                 "build_timeout": 600.0,
                                             },
@@ -129,15 +128,23 @@ agent_config["linux_robotmk"] = [
                         }
                     ],
                     "rcc_configuration": {
-                        "rcc_profile_config": ("default", None),
+                        "rcc_profile_config": (
+                            "custom",
+                            {
+                                "http_proxy": ("use_proxy", "http://127.0.0.1:8080"),
+                                "https_proxy": ("use_proxy", "http://127.0.0.1:8080"),
+                                "no_proxy": "localhost,127.0.0.1",
+                                "tls_certificate_validation": False,
+                            },
+                        ),
                         "robocorp_home_base": "/opt/robotmk/rcc_home/",
                     },
                     "conda_config": {
                         "base_directory": "/opt/robotmk/conda/",
                         "no_proxy": ["localhost", "127.0.0.1"],
-                        "http_proxy": ("no_proxy", None),
-                        "https_proxy": ("no_proxy", None),
-                        "tls_certificate_validation": ("enabled", None),
+                        "http_proxy": ("use_proxy", "http://127.0.0.1:8080"),
+                        "https_proxy": ("use_proxy", "http://127.0.0.1:8080"),
+                        "tls_certificate_validation": ("disabled", None),
                         "tls_revokation_enabled": True,
                     },
                 },

@@ -8,3 +8,4 @@ dependencies:
   - robotframework==7.1.1
   - robotframework-browser==19.3.0
   - robotframework-doctestlibrary
+  - conda-pack

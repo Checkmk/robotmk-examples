@@ -9,6 +9,7 @@ main() {
   [[ -z "${site_arg}" ]] && usage
 
   require_root
+  verify_mitmproxy
   init_paths "${site_arg}"
   validate_inputs
   prompt_overwrite
@@ -40,6 +41,29 @@ cleanup() {
 require_root() {
   if [[ ${EUID} -ne 0 ]]; then
     printf 'This script must be run with sudo/root privileges.\n' >&2
+    exit 1
+  fi
+}
+
+verify_mitmproxy() {
+  # Ensure the MITM proxy defined in proxy/docker-compose.yml is running and reachable.
+  if ! command -v docker >/dev/null 2>&1; then
+    printf 'Docker CLI not found. Please install Docker to verify the MITM proxy container.\n' >&2
+    exit 1
+  fi
+
+  local state=""
+  if ! state="$(docker container inspect -f '{{.State.Running}}' mitmproxy 2>/dev/null)"; then
+    state=""
+  fi
+
+  if [[ "${state}" != "true" ]]; then
+    printf 'Docker container "mitmproxy" is not running. Start it with `docker compose -f proxy/docker-compose.yml up -d`.\n' >&2
+    exit 1
+  fi
+
+  if ! bash -c 'exec 3<>/dev/tcp/127.0.0.1/8080; exec 3>&-; exec 3<&-' >/dev/null 2>&1; then
+    printf 'Container "mitmproxy" is not listening on localhost:8080.\n' >&2
     exit 1
   fi
 }

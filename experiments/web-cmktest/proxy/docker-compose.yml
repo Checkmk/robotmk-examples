@@ -1,0 +1,14 @@
+services:
+  mitmproxy:
+    image: mitmproxy/mitmproxy
+    container_name: mitmproxy
+    command: >
+      mitmweb --web-host 0.0.0.0 --set web_password=admin
+    ports:
+      - "127.0.0.1:8080:8080"   # Proxy
+      - "127.0.0.1:8081:8081"   # Web UI
+    # needed to make the logs visible which show the Web UI password :-)
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+
