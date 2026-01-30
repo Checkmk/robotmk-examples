@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation     Synthetic monitoring demo – Checkout flow (no payment)
-Library           Browser  run_on_failure=Take Screenshot \ EMBED
+Library           Browser  run_on_failure=Take A Screenshot
 # Use the CryptoLibrary to handle encrypted passwords; password for the private key is
 # read from the environment; fallback (do not use in production!) is robotmk
 Library           CryptoLibrary    
@@ -13,7 +13,6 @@ Resource          Resources/cart.resource
 Resource          Resources/checkout.resource
 
 Suite Setup       Open Webshop
-Suite Teardown    Close Browser
 
 *** Variables ***
 ${BASE_URL}       https://practicesoftwaretesting.com
@@ -25,15 +24,13 @@ ${ITEMS_IN_CART}    0
 
 *** Test Cases ***
 User Can Reach Checkout Page
-    [Documentation]    End-to-end checkout flow without payment
-    authentication.Login As User    ${USER_EMAIL}    ${USER_PASSWORD}    ${USER_NAME}
-    Add Items To Cart    @{ITEMS_TO_ADD}
+    [Documentation]    Test if a logged-in user can add items to the cart.
+    ...    Verify the cart items and perform the checkout.
+    authentication.Login As User    ${USER_EMAIL}    ${USER_PASSWORD}  ${USER_NAME}
+    catalog.Add Items To Cart       @{ITEMS_TO_ADD}
     cart.Open Cart
-    checkout.Open Checkout
-    checkout.Checkout Page Should Be Visible
-
-
-
+    checkout.Checkout
+    
 *** Keywords ***
 Open Webshop
     New Browser    chromium    headless=%{ROBOTMK_HEADLESS_HOST=false}
@@ -43,8 +40,3 @@ Open Webshop
 Close Browser
     Close Browser
 
-Add Items To Cart
-    [Arguments]    @{items}
-    FOR  ${item}    IN    @{items}
-        catalog.Add Product To Cart    ${item}
-    END

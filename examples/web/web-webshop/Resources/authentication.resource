@@ -8,4 +8,4 @@ Login As User
     Fill Text      id=email     ${email}
     Fill Text      id=password  ${password}
     Click          data-test=login-submit
-    Get Text  [role=menubar]  contains   ${name}  msg=User login failed; expected to find user name '${name}' in the top menu bar
+    Wait For Condition  Text  [role=menubar]  contains   ${name}  msg=User login failed; expected to find user name '${name}' in the top menu bar
