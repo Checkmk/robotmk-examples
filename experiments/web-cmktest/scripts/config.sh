@@ -66,6 +66,7 @@ verify_mitmproxy() {
     printf 'Container "mitmproxy" is not listening on localhost:8080.\n' >&2
     exit 1
   fi
+  echo "OK: mitmproxy container is running and reachable on localhost:8080"
 }
 
 init_paths() {

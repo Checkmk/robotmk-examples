@@ -2,17 +2,17 @@
 HEADLESS = "false"
 
 [profiles.Car]
-[profiles.Car.variables]
+[profiles.Car.extend-variables]
 SEARCH_IMAGE = "car"
 
 [profiles.Truck]
-[profiles.Truck.variables]
+[profiles.Truck.extend-variables]
 SEARCH_IMAGE = "truck"
 
 [profiles.Motorcycle]
-[profiles.Motorcycle.variables]
+[profiles.Motorcycle.extend-variables]
 SEARCH_IMAGE = "motorcycle"
 
 [profiles.Camper]
-[profiles.Camper.variables]
+[profiles.Camper.extend-variables]
 SEARCH_IMAGE = "camper"
