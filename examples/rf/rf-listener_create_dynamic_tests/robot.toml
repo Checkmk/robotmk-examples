@@ -1,0 +1,5 @@
+[profiles.Listener]
+
+[profiles.PrerunModifier]
+[profiles.PrerunModifier.pre-run-modifiers]
+"./MyPrerunModifier.py" = []
