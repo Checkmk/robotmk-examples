@@ -1,0 +1,36 @@
+default-profiles = [
+    "JaneDoe",
+    "JackHowe",
+    "BobSmith"
+]
+
+# output-dir = { expr = "f'results/run-{datetime.now().strftime(\"%d-%m-%Y-%H.%M.%S\")}'" }
+output-dir = "output"
+
+[variables]
+CMD_VAR = { expr = "1+2*5" }
+CMD_VAR_LONG = "a test"
+ANOTHER_VAR = { expr = "environ.get('CMD_VAR_LONG', 'default')" }
+
+# See https://practicesoftwaretesting.com/checkout for the user accounts
+
+[profiles.JaneDoe]
+description = "User Jane Doe"
+[profiles.JaneDoe.extend-variables]
+USER_NAME = "Jane Doe"
+USER_EMAIL =  "customer@practicesoftwaretesting.com"
+USER_PASSWORD = "crypt:An2Yut93dNrtM3ayVVCnmspsRx5n/K98yesZtAou0Fr0Wkch3BDrdkRip2sNfdY0uf7SSKup7R4Q"
+
+[profiles.JackHowe]
+description = "User Jack Howe"
+[profiles.JackHowe.extend-variables]
+USER_NAME = "Jack Howe"
+USER_EMAIL =  "customer2@practicesoftwaretesting.com"
+USER_PASSWORD = "crypt:An2Yut93dNrtM3ayVVCnmspsRx5n/K98yesZtAou0Fr0Wkch3BDrdkRip2sNfdY0uf7SSKup7R4Q"
+
+[profiles.BobSmith]
+description = "User Bob Smith"
+[profiles.BobSmith.extend-variables]
+USER_NAME = "Bob Smith"
+USER_EMAIL =  "customer3@practicesoftwaretesting.com"
+USER_PASSWORD = "crypt:+sGGKbSxC8zUzxUF/1Ag+WoUakwCqwRH/RiMDgbD21E607H4OrfLcBj0MKVpYDyrwq0So1WBOg=="
