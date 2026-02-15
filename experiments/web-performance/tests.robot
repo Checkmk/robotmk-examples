@@ -7,7 +7,7 @@ Library           CryptoLibrary
 ...    password=%{RF_CRYPT_PWD=robotmk}    
 ...    variable_decryption=True    
 ...    key_path=./keys
-Library  ./MyListener.py    take_screenshots=True
+Library           ./MyListener.py    take_screenshots=True
 Resource          Resources/authentication.resource
 Resource          Resources/catalog.resource
 Resource          Resources/cart.resource

@@ -7,10 +7,13 @@ default-profiles = [
 # output-dir = { expr = "f'results/run-{datetime.now().strftime(\"%d-%m-%Y-%H.%M.%S\")}'" }
 output-dir = "output"
 
-[variables]
-CMD_VAR = { expr = "1+2*5" }
-CMD_VAR_LONG = "a test"
-ANOTHER_VAR = { expr = "environ.get('CMD_VAR_LONG', 'default')" }
+[env]
+OTEL_EXPORTER_OTLP_ENDPOINT = "http://localhost:4366/v1/traces"
+OTEL_SERVICE_NAME = "web-perf"
+
+[listeners]
+"robotframework_tracer.TracingListener" = ["log_level=DEBUG", "capture_logs=true", "capture_arguments=true", "transmit_msg=true"]
+
 
 # See https://practicesoftwaretesting.com/checkout for the user accounts
 

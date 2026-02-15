@@ -8,5 +8,6 @@ dependencies:
   - robotframework==7.1.1
   - robotframework-browser==19.12.4
   - robotframework-crypto==0.3.0
+  - --editable ./robotframework-tracer[dev]
 rccPostInstall:
 - rfbrowser init

@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger
+    ports:
+      - "16666:16686"   # Jaeger UI
+      - "4366:4318"     # OTLP HTTP
+    restart: unless-stopped
