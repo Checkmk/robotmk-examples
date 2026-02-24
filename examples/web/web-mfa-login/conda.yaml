@@ -9,7 +9,7 @@ dependencies:
   - pip:
     # packlages listed here are fetched from pypi.org and installed using pip.
     - robotframework==7.1.1
-    - robotframework-browser==19.1
+    - robotframework-browser==19.12.5
     - robotframework-crypto==0.3.0
     - pyotp==2.9.0
     - robotframework-tidy

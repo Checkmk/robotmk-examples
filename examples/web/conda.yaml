@@ -12,7 +12,7 @@ dependencies:
   - pip:
     # packages listed here are fetched from pypi.org and installed using pip.
     - robotframework==7.1.1
-    - robotframework-browser==19.1
+    - robotframework-browser==19.12.5
 
 rccPostInstall:
   - rfbrowser init   # Initialization command for Playwright (npm)
