@@ -9,6 +9,13 @@ dependencies:
     - robotframework==7.1.1
     - robotframework-browser==19.12.5
 
+# Install the Node.js dependencies and Browser binaries after the environment is created. 
+# Works on Windows, MacOS, and Linux.
+# Note for Linux installations: 
+# - Debian and Ubuntu is supported (https://playwright.dev/docs/intro#system-requirements)
+# - To get a list of linux packages to install, run 
+#   - rcc task shell (get a shell inside the conda environment)
+#   - npx playwright install-deps --dry-run
 rccPostInstall:
-  - rfbrowser init
+  - rfbrowser init 
 
