@@ -1,7 +1,8 @@
 tasks:
-  task1:
-    # (task definitions are not required by Robotmk, but expected by RCC to be compatible with other Robocorp features)
-    shell: echo "nothing to do"
+  # Tasks are preconfigured commands which can be run from the command line. 
+  # (Robotmk does not use them at all, but executes custom Robot Framework commands inside of "rcc task shell")
+  noexec:
+    shell: echo "not for execution as RCC task"
 
 environmentConfigs:
   - conda.yaml

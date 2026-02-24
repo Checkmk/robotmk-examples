@@ -1,11 +1,8 @@
-# For more details on the format and content:
-# https://github.com/robocorp/rcc/blob/master/docs/recipes.md#what-is-in-robotyaml
-
 tasks:
   # Tasks are preconfigured commands which can be run from the command line. 
   # (Robotmk does not use them at all, but executes custom Robot Framework commands inside of "rcc task shell")
-  Run all tasks:
-    shell: python -m robot --report NONE --outputdir output --logtitle "Task log" tests.robot
+  noexec:
+    shell: echo "not for execution as RCC task"
 
 # Freeze files guarantee 100% identical environments by installing exactly the same versions of all 
 # dependencies. They are generated in /output whenever rcc is run from the commandline. 
