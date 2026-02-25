@@ -1,5 +1,8 @@
-[profiles.Listener]
-
-[profiles.PrerunModifier]
-[profiles.PrerunModifier.pre-run-modifiers]
+# --- WORKS
+[pre-run-modifiers]
 "./MyPrerunModifier.py" = []
+
+# --- DOES NOT WORK
+# [profiles.Foo]
+# [profiles.Foo.pre-run-modifiers]
+# "./MyPrerunModifier.py" = []
