@@ -15,6 +15,7 @@ Resource          Resources/checkout.resource
 Suite Setup       Open Webshop
 
 *** Variables ***
+# https://github.com/testsmith-io/practice-software-testing
 ${BASE_URL}       https://practicesoftwaretesting.com
 ${USER_EMAIL}     customer3@practicesoftwaretesting.com
 ${USER_PASSWORD}  crypt:+sGGKbSxC8zUzxUF/1Ag+WoUakwCqwRH/RiMDgbD21E607H4OrfLcBj0MKVpYDyrwq0So1WBOg==

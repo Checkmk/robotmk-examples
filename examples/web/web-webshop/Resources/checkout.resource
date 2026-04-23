@@ -17,6 +17,7 @@ Fill Billing Address
     Fill Text   data-test=city     Islington
     Fill Text   data-test=state    London
     Fill Text   data-test=postal_code      EC1M 5TA
+    Fill Text   data-test=house_number      23
     Fill Text   data-test=country        United Kingdom
     common.Take A Screenshot  app-address
     Click          data-test=proceed-3
